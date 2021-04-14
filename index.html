@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Pilhas</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./styles.css"/>
+    <script src="./scripts.js"></script>
+</head>
+<body onload="loadHeapView()">
+    <h1 class="title">PILHA (HEAP)</h1>
+    <p class="description">Desenvolvido por André Prolo - Sistemas de informação UNISEP</p>
+
+    <br/>
+    <div class="insertion-area">
+        <p id="error"></p>
+        <input type="number" id="value" placeholder="Digite um valor"/>
+        <div>
+            <button class="push" onclick="pushValue()">Push</button>
+            <button class="pop" onclick="popValue()">Pop</button> 
+            <button class="clear" onclick="clearHeap()">Clear</button> 
+        </div>
+    </div>
+
+    <div class="visualization-section">
+        <h2>Visualização</h2>
+        <div class="separator"></div>
+        <div id="heap-view"></div>
+        <div class="info">
+            <p id="size">Tamanho:</p>
+            <p id="top-item">Objeto topo:</p>
+        </div>
+    </div>
+    
+
+    <div class="visualization-section">
+        <h2>Info</h2>
+        <div class="separator"></div>
+        <ul class="list"> 
+            <li>PILHA ou HEAP</li>
+            <li>É uma estrutura de dados simples.</li>
+            <li>Principal ponto de uma pilha é que todo o acesso a seus elementos são feitos através do seu topo.</li>
+        </ul>
+    </div>
+</body>
+</html>
