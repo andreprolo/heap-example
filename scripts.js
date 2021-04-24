@@ -26,9 +26,7 @@ function Heap() {
     }
 
     this.pop = () => {
-        if (this.items.length == 0) {
-            return;
-        }
+        if (this.items.length == 0) return;
     
         this.items.pop();
         this.updateHeapView();

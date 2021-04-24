@@ -117,6 +117,41 @@ div.visualization-section > .list > li {
     margin-bottom: 20px;
 }
 
+div.visualization-section > .description {
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+
+div.visualization-section > .author-name {
+    align-self: flex-start;
+    margin-left: 50px;
+    font-weight: 700;
+}
+
+div.visualization-section > .names-section {
+    margin: 0px 50px;
+    color: grey;
+    padding: 10px;
+    border: 1px solid #D5D3D3;
+}
+
+div.visualization-section > .end-credit-section {
+    width: 88%;
+    margin: 10px 50px;
+    padding: 10px;
+    border: 1px solid #D5D3D3;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+div.visualization-section:last-of-type {
+    margin-bottom: 40px;
+}
+
 #heap-view {
     margin: 36px 0 10px 0;
 }
