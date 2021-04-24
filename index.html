@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="./styles.css"/>
     <script src="./scripts.js"></script>
 </head>
-<body onload="loadHeapView()">
+<body onload="heap.updateHeapView()">
     <h1 class="title">PILHA (HEAP)</h1>
     <p class="description">Desenvolvido por André Prolo - Sistemas de informação UNISEP</p>
 
@@ -22,9 +22,9 @@
         <p id="error"></p>
         <input type="number" id="value" placeholder="Digite um valor"/>
         <div>
-            <button class="push" onclick="pushValue()">Push</button>
-            <button class="pop" onclick="popValue()">Pop</button> 
-            <button class="clear" onclick="clearHeap()">Clear</button> 
+            <button class="push" onclick="heap.push()">Push</button>
+            <button class="pop" onclick="heap.pop()">Pop</button> 
+            <button class="clear" onclick="heap.clear()">Clear</button> 
         </div>
     </div>
 
