@@ -1,4 +1,6 @@
+Deploy: https://heap-example.herokuapp.com/
 # Documentação do projeto
+
 
 Basicamente toda a lógica está contida dentro de uma estrutura chamada de `Heap`, que é instânciada na última linha do script:
 ```js
