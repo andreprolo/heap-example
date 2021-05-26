@@ -7,7 +7,7 @@ Basicamente toda a lógica está contida dentro de uma estrutura chamada de `Hea
 const heap = new Heap();
 ```
 
-A função `push` é responsávele por adicionar um item na pilha, e aplicar validações no valor que o usuário informou:
+A função `push` é responsável por adicionar um item na pilha, e aplicar validações no valor que o usuário informou:
 ```js
 this.push = () => {
     let error = document.getElementById("error");
