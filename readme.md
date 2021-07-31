@@ -1,10 +1,10 @@
-Deploy: https://heap-example.herokuapp.com/
+Deploy: https://stack-example-prolo.herokuapp.com/
 # Documentação do projeto
 
 
-Basicamente toda a lógica está contida dentro de uma estrutura chamada de `Heap`, que é instânciada na última linha do script:
+Basicamente toda a lógica está contida dentro de uma estrutura chamada de `Stack`, que é instânciada na última linha do script:
 ```js
-const heap = new Heap();
+const stack = new Stack();
 ```
 
 A função `push` é responsável por adicionar um item na pilha, e aplicar validações no valor que o usuário informou:
@@ -30,7 +30,7 @@ this.push = () => {
     }
     this.items.push(value);
 
-    this.updateHeapView();
+    this.updateStackView();
 }
 ```
 
@@ -40,7 +40,7 @@ this.pop = () => {
     if (this.items.length == 0) return;
 
     this.items.pop();
-    this.updateHeapView();
+    this.updateStackView();
 }
 ```
 
@@ -48,42 +48,42 @@ A função `clear` simplesmente limpa os valores da pilha:
 ```js
 this.clear = () => {
     this.items = [];
-    this.updateHeapView();
+    this.updateStackView();
 }
 ```
 
-A função `updateHeapView` tem a responsabilidade de observar o que foi alterado na pilha, e atualizar o HTML de modo eficiente, apenas onde for necessário:
+A função `updateStackView` tem a responsabilidade de observar o que foi alterado na pilha, e atualizar o HTML de modo eficiente, apenas onde for necessário:
 ```js
-this.updateHeapView = () => {
-    let heapTag = document.getElementById("heap-view");
+this.updateStackView = () => {
+    let stackTag = document.getElementById("stack-view");
 
     let size = this.items.length;
-    let viewSize = this.getViewSize(heapTag);
+    let viewSize = this.getViewSize(stackTag);
 
     if (size <= 0) {
-        heapTag.innerHTML = "";
+        stackTag.innerHTML = "";
         let content = document.createElement('div');
         content.className = 'empty';
-        heapTag.appendChild(content);
+        stackTag.appendChild(content);
 
         this.updateSizeTag(0);
         this.updateTopItemTag("");
         return;
     } else {
-        this.removeEmptyItem(heapTag);
+        this.removeEmptyItem(stackTag);
     }
 
     if (size == viewSize - 1) {
-        heapTag.removeChild(heapTag.firstElementChild);
+        stackTag.removeChild(stackTag.firstElementChild);
     } else if (size == viewSize + 1) {
         let content = document.createElement('div');
         
         content.innerText = this.items[this.items.length-1];
 
-        heapTag.prepend(content);
+        stackTag.prepend(content);
     }
 
-    this.createClassNameForItems(heapTag);
+    this.createClassNameForItems(stackTag);
     this.updateSizeTag(size);
     this.updateTopItemTag(this.items[size-1])
 }
@@ -91,25 +91,25 @@ this.updateHeapView = () => {
 
 O código abaixo é responsável por ajustar as classes das tags de cada item, para aplicar as colorações via css:
 ```js
-this.createClassNameForItems = (heapTag) => {
-    if (heapTag.childNodes.length < 1) return;
-    heapTag.childNodes.forEach((item, index) => {     
+this.createClassNameForItems = (stackTag) => {
+    if (stackTag.childNodes.length < 1) return;
+    stackTag.childNodes.forEach((item, index) => {     
         if (!item.className.includes('value')) {
             item.className = 'value';
         }
 
-        if (item.className.includes('last') && index > 0 && index != heapTag.childNodes.length - 1) {
+        if (item.className.includes('last') && index > 0 && index != stackTag.childNodes.length - 1) {
             item.className = item.className.replaceAll('last', '');
         }
 
         if (index == 0) {                 
-            if (heapTag.childNodes.length < 3) {
+            if (stackTag.childNodes.length < 3) {
                 item.className = item.className.replaceAll('last', '');
             } else if (!item.className.includes('last')) {
                 item.className += ' last';
             }
-        } else if (index == heapTag.childNodes.length - 1) {
-            if (heapTag.childNodes.length < 2) {
+        } else if (index == stackTag.childNodes.length - 1) {
+            if (stackTag.childNodes.length < 2) {
                 item.className = item.className.replaceAll('base', '');
             } else if (!item.className.includes('base')) {
                 item.className += ' base';
