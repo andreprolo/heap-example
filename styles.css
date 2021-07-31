@@ -152,11 +152,11 @@ div.visualization-section:last-of-type {
     margin-bottom: 40px;
 }
 
-#heap-view {
+#stack-view {
     margin: 36px 0 10px 0;
 }
 
-#heap-view > .empty {
+#stack-view > .empty {
     font-size: 18px;
     width: 90px;
     height: 70px;
@@ -165,7 +165,7 @@ div.visualization-section:last-of-type {
     box-sizing: border-box;
 }
 
-#heap-view > .value {
+#stack-view > .value {
     font-size: 18px;
     color: #666666;
     width: 70px;
@@ -179,11 +179,11 @@ div.visualization-section:last-of-type {
     align-items: center;
 }
 
-#heap-view > .base {
+#stack-view > .base {
     background-color: #ABFEB9;
 }
 
-#heap-view > .last {
+#stack-view > .last {
     background-color: #FFCACA;
 }
 

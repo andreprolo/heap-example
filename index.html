@@ -13,8 +13,8 @@
     <link rel="stylesheet" type="text/css" href="./styles.css"/>
     <script src="./scripts.js"></script>
 </head>
-<body onload="heap.updateHeapView()">
-    <h1 class="title">PILHA (HEAP)</h1>
+<body onload="stack.updateStackView()">
+    <h1 class="title">PILHA (STACK)</h1>
     <p class="description">Desenvolvido por André Prolo - Sistemas de informação UNISEP</p>
 
     <br/>
@@ -22,16 +22,16 @@
         <p id="error"></p>
         <input type="number" id="value" placeholder="Digite um valor"/>
         <div>
-            <button class="push" onclick="heap.push()">Push</button>
-            <button class="pop" onclick="heap.pop()">Pop</button> 
-            <button class="clear" onclick="heap.clear()">Clear</button> 
+            <button class="push" onclick="stack.push()">Push</button>
+            <button class="pop" onclick="stack.pop()">Pop</button> 
+            <button class="clear" onclick="stack.clear()">Clear</button> 
         </div>
     </div>
 
     <div class="visualization-section">
         <h2>Visualização</h2>
         <div class="separator"></div>
-        <div id="heap-view"></div>
+        <div id="stack-view"></div>
         <div class="info">
             <p id="size">Tamanho:</p>
             <p id="top-item">Objeto topo:</p>
